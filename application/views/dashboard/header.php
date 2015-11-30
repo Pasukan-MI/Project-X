@@ -5,7 +5,7 @@
 <!-- BEGIN HEAD -->
 <head>
    <meta charset="utf-8" />
-   <title>Blank Page</title>
+   <title>ADMIN WEB</title>
    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
    <meta content="" name="description" />
    <meta content="" name="author" />
@@ -175,22 +175,13 @@
                    <ul class="nav pull-right top-menu" >
                        <!-- BEGIN SUPPORT -->
                        <li class="dropdown mtop5">
-
-                           <a class="dropdown-toggle element" data-placement="bottom" data-toggle="tooltip" href="#" data-original-title="Chat">
-                               <i class="icon-comments-alt"></i>
-                           </a>
-                       </li>
-                       <li class="dropdown mtop5">
-                           <a class="dropdown-toggle element" data-placement="bottom" data-toggle="tooltip" href="#" data-original-title="Help">
-                               <i class="icon-headphones"></i>
-                           </a>
                        </li>
                        <!-- END SUPPORT -->
                        <!-- BEGIN USER LOGIN DROPDOWN -->
                        <li class="dropdown">
                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                <img src="img/avatar1_small.jpg" alt="">
-                               <span class="username">Mosaddek Hossain</span>
+                               <span class="username"><?php echo $this->session->userdata('username')?></span>
                                <b class="caret"></b>
                            </a>
                            <ul class="dropdown-menu">

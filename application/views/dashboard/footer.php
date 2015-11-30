@@ -19,6 +19,7 @@
    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/chosen-bootstrap/chosen/chosen.jquery.min.js"></script>
    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/uniform/jquery.uniform.min.js"></script>
    <script src="<?php echo base_url();?>assets/js/scripts.js"></script>
+   <!---<script>$('#myModal').modal('show')</script>--->
    <script>
       jQuery(document).ready(function() {       
          // initiate layout and plugins

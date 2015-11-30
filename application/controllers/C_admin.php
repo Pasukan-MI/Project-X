@@ -26,7 +26,7 @@ class C_admin extends Admin_Controller {
 	public function index()
 	{
        if($this->M_login->loggedin() == true){
-            redirect('dashboard', 'location');
+            redirect('admin/beranda', 'location');
         }
 		$this->load->view('login_admin');
 	}
