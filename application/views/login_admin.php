@@ -39,7 +39,7 @@ Website: http://thevectorlab.net/
   <!-- BEGIN LOGIN -->
   <div id="login">
     <!-- BEGIN LOGIN FORM -->
-    <form id="loginform" class="form-vertical no-padding no-margin" action="<?php echo base_url('index.php/C_admin/proses_login');?>" method="post">
+    <form id="loginform" class="form-vertical no-padding no-margin" action="<?php echo base_url('index.php/C_login/proses_login');?>" method="post">
       <div class="lock">
           <i class="icon-lock"></i>
       </div>

@@ -189,7 +189,7 @@
                                <li><a href="#"><i class="icon-tasks"></i> My Tasks</a></li>
                                <li><a href="#"><i class="icon-calendar"></i> Calendar</a></li>
                                <li class="divider"></li>
-                               <li><a href="<?php echo base_url("index.php/C_admin/logout");?>"><i class="icon-key"></i> Log Out</a></li>
+                               <li><a href="<?php echo base_url("index.php/C_login/logout");?>"><i class="icon-key"></i> Log Out</a></li>
                            </ul>
                        </li>
                        <!-- END USER LOGIN DROPDOWN -->

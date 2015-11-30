@@ -17,8 +17,14 @@ class C_dashboard extends Admin_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+    function __construct() {
+        parent::__construct();
+        $this->load->model('M_dashboard');
+    }
+    
 	public function index()
 	{
+        $this->data['konten'] = 'beranda';
 		$this->data['username'] = $this->session->userdata['username'];
         $this->data['email'] = $this->session->userdata['email'];
         $this->load->view('dashboard', $this->data);

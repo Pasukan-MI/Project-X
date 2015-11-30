@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class C_admin extends Admin_Controller {
+class C_login extends Admin_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -26,7 +26,7 @@ class C_admin extends Admin_Controller {
 	public function index()
 	{
        if($this->M_login->loggedin() == true){
-            redirect('admin/beranda', 'location');
+            redirect('dashboard', 'location');
         }
 		$this->load->view('login_admin');
 	}
@@ -38,16 +38,16 @@ class C_admin extends Admin_Controller {
         
         if(empty($username) || empty($password)){
             $this->session->set_flashdata('pesan', 'Username/Password kosong');
-            redirect('admin', 'location');
+            redirect('login', 'location');
         }
         
         $login = $this->M_login->login_admin($username, $password);
         if($this->M_login->loggedin() == true){
-            redirect('admin/beranda', 'location');
+            redirect('dashboard', 'location');
         }
         else{
             $this->session->set_flashdata('pesan', 'Username/Password Salah');
-            redirect('admin', 'location');
+            redirect('login', 'location');
         }
              
 	}
@@ -55,14 +55,10 @@ class C_admin extends Admin_Controller {
     public function logout()
 	{
 		$this->session->sess_destroy();
-        redirect('admin');
+        redirect('login');
              
 	}
     
-    public function beranda(){
-        $this->data['konten'] = 'beranda_admin';
-        $this->load->view('dashboard', $this->data);
-    }
 }
 
 /* End of file welcome.php */

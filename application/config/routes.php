@@ -38,11 +38,11 @@
 |
 */
 
-$route['default_controller'] = "C_admin";
+$route['default_controller'] = "C_login";
 $route['404_override'] = '';
 
-$route['admin'] = 'C_admin';
-$route['admin/beranda'] = 'C_admin/beranda';
+$route['login'] = 'C_login';
+$route['dashboard'] = 'C_dashboard';
 
 
 
