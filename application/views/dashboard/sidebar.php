@@ -19,35 +19,25 @@
                       <span class="icon-box"> <i class="icon-dashboard"></i></span> Dashboard
                   </a>
               </li>
-              <li class="has-sub">
-                  <a href="javascript:;" class="">
+              <li>
+                  <a href="#" class="">
                       <span class="icon-box"> <i class="icon-book"></i></span> Posts
-                      <span class="arrow"></span>
                   </a>
-                  <ul class="sub">
-                      <li><a class="" href="#">List Post</a></li>
-                      <li><a class="" href="#">Add Post</a></li>
-                  </ul>
               </li>
-              <li class="has-sub">
-                  <a href="javascript:;" class="">
-                      <span class="icon-box"><i class="icon-user"></i></span> Users
-                      <span class="arrow"></span>
+              <li>
+                  <a href="#" class="">
+                      <span class="icon-box"> <i class="icon-group"></i></span> Users
                   </a>
-                  <ul class="sub">
-                      <li><a class="" href="#">List User</a></li>
-                      <li><a class="" href="#">Add User</a></li>
-                  </ul>
               </li>
-              <li class="has-sub">
-                  <a href="javascript:;" class="">
-                      <span class="icon-box"><i class="icon-comment"></i></span> Comments
-                      <span class="arrow"></span>
+              <li>
+                  <a href="#" class="">
+                      <span class="icon-box"> <i class="icon-comment"></i></span> Comments
                   </a>
-                  <ul class="sub">
-                     <li><a class="" href="#">List Comment</a></li>
-                      <li><a class="" href="#">Add Comment</a></li>
-                  </ul>
+              </li>
+              <li>
+                  <a href="#" class="">
+                      <span class="icon-box"> <i class="icon-reorder"></i></span> Menus
+                  </a>
               </li>
               
               <li><a class="" href="login.html"><span class="icon-box"><i class="icon-cogs"></i></span> Settings</a></li>

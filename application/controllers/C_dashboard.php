@@ -25,6 +25,8 @@ class C_dashboard extends Admin_Controller {
 	public function index()
 	{
         $this->data['konten'] = 'beranda';
+        $this->data['latestpost'] = $this->M_dashboard->latestPost();
+        $this->data['latestcomment'] = $this->M_dashboard->latestComment();
 		$this->data['username'] = $this->session->userdata['username'];
         $this->data['email'] = $this->session->userdata['email'];
         $this->load->view('dashboard', $this->data);

@@ -41,12 +41,12 @@
                                <div class="bold">Manajemen User</div>
                            </a>
                            <a href="#" class="icon-btn btn btn-primary span2">
-                              <i class="icon-comment"></i>
-                               <div class="bold">Komentar</div>
+                              <i class="icon-reorder"></i>
+                               <div class="bold">Manajemen Menu</div>
                            </a>
                            <a href="#" class="icon-btn btn btn-primary span2">
-                               <i class="icon-bar-chart"></i>
-                               <div class="bold">Polling</div>
+                               <i class="icon-comment"></i>
+                               <div class="bold">Komentar</div>
                            </a>
                            <a href="#" class="icon-btn btn btn-primary span2">
                                <i class="icon-cog"></i>
@@ -61,49 +61,36 @@
                <div class="span6">
                    <div class="widget">
                         <div class="widget-title">
-                           <h4>Control Panel</h4>              
+                           <h4>
+                           <i class="icon-book"></i>
+                           Postingan Terbaru</h4>              
                         </div>
                         <div class="widget-body">
                             <table class="table table-striped table-bordered" id="sample_1">
                             <thead>
                                 <tr>
-                                    <th>Username</th>
-                                    <th class="hidden-phone">Email</th>
-                                    <th class="hidden-phone">Points</th>
-                                    <th class="hidden-phone">Joined</th>
-                                    <th class="hidden-phone"></th>
+                                    <th>No</th>
+                                    <th>Author</th>
+                                    <th>Judul</th>
+                                    <th>Tanggal</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
+                               <?php
+                                $no=1;
+                                foreach($latestpost as $r){
+                                ?>
                                 <tr class="odd gradeX">
-                                    <td>shuxer</td>
-                                    <td class="hidden-phone"><a href="mailto:shuxer@gmail.com">shuxer@gmail.com</a></td>
-                                    <td class="hidden-phone">120</td>
-                                    <td class="center hidden-phone">12 Jan 2012</td>
-                                    <td class="hidden-phone"><span class="label label-success">Approved</span></td>
+                                    <td><?php echo $no; ?></td>
+                                    <td><?php echo $r->username; ?></td>
+                                    <td><?php echo $r->judul; ?></td>
+                                    <td><?php echo date('d-m-Y', strtotime($r->tanggal)); ?></td>
+                                    <td><a href="<?php echo $no; ?>">Edit</a></td>
                                 </tr>
-                                <tr class="odd gradeX">
-                                    <td>looper</td>
-                                    <td class="hidden-phone"><a href="mailto:looper90@gmail.com">looper90@gmail.com</a></td>
-                                    <td class="hidden-phone">120</td>
-                                    <td class="center hidden-phone">12.12.2011</td>
-                                    <td class="hidden-phone"><span class="label label-warning">Suspended</span></td>
-                                </tr>
-                                <tr class="odd gradeX">
-                                    <td>userwow</td>
-                                    <td class="hidden-phone"><a href="mailto:userwow@yahoo.com">userwow@yahoo.com</a></td>
-                                    <td class="hidden-phone">20</td>
-                                    <td class="center hidden-phone">12.12.2012</td>
-                                    <td class="hidden-phone"><span class="label label-success">Approved</span></td>
-                                </tr>
-                                <tr class="odd gradeX">
-                                    <td>user1wow</td>
-                                    <td class="hidden-phone"><a href="mailto:userwow@gmail.com">userwow@gmail.com</a></td>
-                                    <td class="hidden-phone">20</td>
-                                    <td class="center hidden-phone">12.12.2012</td>
-                                    <td class="hidden-phone"><span class="label label-inverse">Blocked</span></td>
-                                </tr>
-                                
+                                <?php 
+                                $no++;
+                                } ?>
                                 </tbody>
                         </table>
                         </div>
@@ -112,48 +99,36 @@
                   <div class="span6">
                       <div class="widget">
                         <div class="widget-title">
-                           <h4>Control Panel</h4>              
+                           <h4>
+                           <i class="icon-comment"></i>
+                           Komentar Terbaru</h4>             
                         </div>
                         <div class="widget-body">
                             <table class="table table-striped table-bordered" id="sample_1">
                             <thead>
                                 <tr>
-                                    <th>Username</th>
-                                    <th class="hidden-phone">Email</th>
-                                    <th class="hidden-phone">Points</th>
-                                    <th class="hidden-phone">Joined</th>
-                                    <th class="hidden-phone"></th>
+                                     <th>No</th>
+                                    <th>Nama</th>
+                                    <th>Komentar</th>
+                                    <th>Tanggal</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php
+                                $no=1;
+                                foreach($latestcomment as $r){
+                                ?>
                                 <tr class="odd gradeX">
-                                    <td>shuxer</td>
-                                    <td class="hidden-phone"><a href="mailto:shuxer@gmail.com">shuxer@gmail.com</a></td>
-                                    <td class="hidden-phone">120</td>
-                                    <td class="center hidden-phone">12 Jan 2012</td>
-                                    <td class="hidden-phone"><span class="label label-success">Approved</span></td>
+                                    <td><?php echo $no; ?></td>
+                                    <td><?php echo $r->nama_komentar; ?></td>
+                                    <td><?php echo $r->isi_komentar; ?></td>
+                                    <td><?php echo date('d-m-Y', strtotime($r->tgl)); ?></td>
+                                    <td><a href="<?php echo $no; ?>">Edit</a></td>
                                 </tr>
-                                <tr class="odd gradeX">
-                                    <td>looper</td>
-                                    <td class="hidden-phone"><a href="mailto:looper90@gmail.com">looper90@gmail.com</a></td>
-                                    <td class="hidden-phone">120</td>
-                                    <td class="center hidden-phone">12.12.2011</td>
-                                    <td class="hidden-phone"><span class="label label-warning">Suspended</span></td>
-                                </tr>
-                                <tr class="odd gradeX">
-                                    <td>userwow</td>
-                                    <td class="hidden-phone"><a href="mailto:userwow@yahoo.com">userwow@yahoo.com</a></td>
-                                    <td class="hidden-phone">20</td>
-                                    <td class="center hidden-phone">12.12.2012</td>
-                                    <td class="hidden-phone"><span class="label label-success">Approved</span></td>
-                                </tr>
-                                <tr class="odd gradeX">
-                                    <td>user1wow</td>
-                                    <td class="hidden-phone"><a href="mailto:userwow@gmail.com">userwow@gmail.com</a></td>
-                                    <td class="hidden-phone">20</td>
-                                    <td class="center hidden-phone">12.12.2012</td>
-                                    <td class="hidden-phone"><span class="label label-inverse">Blocked</span></td>
-                                </tr>
+                                <?php 
+                                $no++;
+                                } ?>
+                                </tbody>
                                 
                                 </tbody>
                         </table>
