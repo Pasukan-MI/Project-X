@@ -66,7 +66,7 @@
                            Postingan Terbaru</h4>              
                         </div>
                         <div class="widget-body">
-                            <table class="table table-striped table-bordered" id="sample_1">
+                            <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -104,7 +104,7 @@
                            Komentar Terbaru</h4>             
                         </div>
                         <div class="widget-body">
-                            <table class="table table-striped table-bordered" id="sample_1">
+                            <table class="table table-bordered table-hover">
                             <thead>
                                 <tr>
                                      <th>No</th>

@@ -14,6 +14,13 @@ body {
     font-size:13px;
 }
 
+#modal_form 
+{
+    width: 700px; 
+    margin-left:  -350px
+} 
+
+
 /* fix for font awesome icon classes */
 [class^="icon-"], [class*=" icon-"],[class^="icon-"]:hover, [class*=" icon-"]:hover {
     background: none !important;

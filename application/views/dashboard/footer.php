@@ -6,6 +6,7 @@
       </div>
    </div>
    <!-- END FOOTER -->
+
    <!-- BEGIN JAVASCRIPTS -->    
    <!-- Load javascripts at bottom, this will reduce page load time -->
    <script src="<?php echo base_url();?>assets/js/jquery-1.8.3.min.js"></script>
@@ -18,7 +19,12 @@
    <![endif]-->
    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/chosen-bootstrap/chosen/chosen.jquery.min.js"></script>
    <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/uniform/jquery.uniform.min.js"></script>
+   <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/data-tables/jquery.dataTables.js"></script>
+   <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/data-tables/DT_bootstrap.js"></script>
+   <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/ckeditor/ckeditor.js"></script>
    <script src="<?php echo base_url();?>assets/js/scripts.js"></script>
+   <script>var BASE_URL = '<?php echo base_url();?>';</script>
+   <script src="<?php echo base_url();?>assets/js/custom.js"></script>
    <!---<script>$('#myModal').modal('show')</script>--->
    <script>
       jQuery(document).ready(function() {       
@@ -26,7 +32,8 @@
          App.init();
       });
    </script>
-   <!-- END JAVASCRIPTS -->   
+
+   <!-- END JAVASCRIPTS --> 
 </body>
 <!-- END BODY -->
 </html>

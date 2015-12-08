@@ -15,12 +15,12 @@
          <!-- BEGIN SIDEBAR MENU -->
           <ul class="sidebar-menu">
               <li>
-                  <a href="#" class="">
+                  <a href="<?php echo base_url("index.php/dashboard");?>" class="">
                       <span class="icon-box"> <i class="icon-dashboard"></i></span> Dashboard
                   </a>
               </li>
               <li>
-                  <a href="#" class="">
+                  <a href="<?php echo base_url("index.php/post");?>" class="">
                       <span class="icon-box"> <i class="icon-book"></i></span> Posts
                   </a>
               </li>
