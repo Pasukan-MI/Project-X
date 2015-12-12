@@ -26,5 +26,31 @@ class M_post extends CI_Model
         return $query->row();
     }
     
+     public function save($data)
+    {
+       
+        if($this->db->insert('berita', $data)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
+    public function update($data, $id){
+        $this->db->where('id_berita', $id);
+        if($this->db->update('berita', $data)){
+            return true;
+        }
+        else{
+            return false;
+        }
+        
+    }
+    
+    public function delete($id){
+        $this->db->where('id_berita', $id);
+        $this->db->delete('berita');
+    }
 }
 ?>

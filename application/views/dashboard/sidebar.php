@@ -19,10 +19,14 @@
                       <span class="icon-box"> <i class="icon-dashboard"></i></span> Dashboard
                   </a>
               </li>
-              <li>
-                  <a href="<?php echo base_url("index.php/post");?>" class="">
-                      <span class="icon-box"> <i class="icon-book"></i></span> Posts
+              <li class="has-sub">
+                  <a href="javascript:;" class="">
+                      <span class="icon-box"> <i class="icon-book"></i></span> Posts <span class="arrow"></span>
                   </a>
+                  <ul class="sub">
+                      <li><a href="<?php echo base_url("index.php/post");?>"> Post</a></li>
+                      <li><a href="">Categories</a></li>
+                  </ul>
               </li>
               <li>
                   <a href="#" class="">

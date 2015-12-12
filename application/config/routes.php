@@ -43,8 +43,14 @@ $route['404_override'] = '';
 
 $route['login'] = 'c_login/index';
 $route['dashboard'] = 'c_dashboard/index';
+
 $route['post'] = 'c_post/index';
 $route['post/edit/(:num)'] = 'c_post/edit/$1';
+$route['post/update'] = 'c_post/update';
+$route['post/add'] = 'c_post/add';
+$route['post/save'] = 'c_post/save';
+$route['post/delete'] = 'c_post/delete';
+
 
 
 

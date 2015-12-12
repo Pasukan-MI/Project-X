@@ -34,12 +34,13 @@
                            Daftar Postingan</h4>              
                         </div>
                         <div class="widget-body">
+                       
                          <div class="row-fluid">
-                         <button class="btn btn-info" onclick="addPost()"><i class="icon-pencil icon-white"> </i>Tambah Data</button>
-                          <button class="btn btn-info" onclick="deletePost()"><i class="icon-trash icon-white"></i> Delete</button>
+                         <a class="btn btn-info" href='<?php echo base_url();?>index.php/post/add/'><i class="icon-pencil icon-white"> Tambah Data</i></a>
+                          <button class="btn btn-info" onclick="$('.form').submit()"><i class="icon-trash icon-white"></i> Delete</button>
                          </div>
+                           <form class="form" action="post/delete" method="post" name="form">
                            <br>
-                            <form action="" method="post" name="form">
                             <table class="table table-striped table-bordered table-hover" id="sample_1">
                             <thead>
                                 <tr>
@@ -54,12 +55,13 @@
                             <tbody>
                                <?php
                                 foreach($listpost as $r){
+                                    $url = base_url().'index.php/post/edit/'.$r->id_berita;
                                 ?>
                                 <tr class="odd gradeX">
                                    <td><input type="checkbox" name="checkbox[]" class="checkboxes" value="<?php echo $r->id_berita; ?>" /></td>
                                     <td><?php echo $r->id_berita; ?></td>
                                     <td><?php echo $r->username; ?></td>
-                                    <td><a href="#" onclick="editPost(<?php echo $r->id_berita; ?>)"><?php echo $r->judul; ?></a></td>
+                                    <td><a href="<?php echo $url ;?>"><?php echo $r->judul; ?></a></td>
                                     <td><?php echo date('d-m-Y', strtotime($r->tanggal)); ?></td>
                                     <td><?php echo $r->dibaca; ?></td>
                                 </tr>
@@ -71,7 +73,6 @@
                         </div>
                     </div>
                   </div>
-                 <?php $this->load->view('modal/modal_post');?>
            </div>  
             </div>
            </div>  

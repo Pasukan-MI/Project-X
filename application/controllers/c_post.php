@@ -20,6 +20,7 @@ class C_post extends Admin_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('M_post');
+        $this->load->helper('fungsi');
     }
     
 	public function index()
@@ -32,18 +33,57 @@ class C_post extends Admin_Controller {
 	}
     
      public function add(){
-        $this->_validate();
-        $data = array(
-                'judul' => $this->input->post('judul'),
-                'isi_berita' => $this->input->post('editor1'),
-            );
-        $insert = $this->person->save($data);
-        echo json_encode(array("status" => TRUE));
+        ini_set('error_reporting', E_STRICT); 
+       $this->data['konten'] = 'form_post';
+       $this->data ['formPost'] = "";    
+      $this->load->view('dashboard', $this->data); 
     }
+    
+    public function save(){
+         $this->form_validation->set_rules('judul', 'Judul', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('editor1', 'Isi', 'trim|required|xss_clean');
+         if($this->form_validation->run() == false){
+             redirect('post/add');
+         }
+         else{ 
+             if($this->input->post('submit') == 'update'){
+                 $id = $this->input->post('id');
+                 $data = array(
+                   'judul' => $this->input->post('judul') ,
+                   'isi_berita' => $this->input->post('editor1'),
+                   'tanggal' => date('Y-m-d H:i:s') 
+                );
+                 $result = $this->M_post->update($data, $id);
+             }
+             elseif($this->input->post('submit') == 'tambah'){
+                 $data = array(
+                  'id_berita' => generateId(),
+                   'judul' => $this->input->post('judul') ,
+                   'isi_berita' => $this->input->post('editor1'),
+                   'tanggal' => date('Y-m-d H:i:s') 
+                );
+                 $result = $this->M_post->save($data);
+             }
+             if($result){
+                 redirect('post');
+             }
+             
+         }
+    }
+    
     
      public function edit($id){
         $result = $this->M_post->get_by_id($id);
-        echo json_encode($result); 
+        $this->data['konten'] = 'form_post';
+        $this->data['formPost'] = $result;
+         $this->load->view('dashboard', $this->data);
+    }
+    
+    public function delete(){
+        foreach($this->input->post('checkbox') as $result){
+           $this->M_post->delete($result);
+        }
+        redirect('post');
     }
     
 }
