@@ -36,34 +36,33 @@
                         <div class="widget-body">
                        
                          <div class="row-fluid">
-                         <a class="btn btn-info" href='<?php echo base_url();?>index.php/post/add/'><i class="icon-pencil icon-white"> Tambah Data</i></a>
+                         <a class="btn btn-info" href='<?php echo base_url();?>index.php/kategori/add/'><i class="icon-pencil icon-white"> Tambah Data</i></a>
                           <button class="btn btn-info" onclick="$('.form').submit()"><i class="icon-trash icon-white"></i> Delete</button>
                          </div>
-                           <form class="form" action="<?php echo base_url();?>index.php/post/delete" method="post" name="form">
+                           <form class="form" action="<?php echo base_url();?>index.php/kategori/delete" method="post" name="form">
                            <br>
                             <table class="table table-striped table-bordered table-hover" id="sample_1">
                             <thead>
                                 <tr>
                                    <th style="width:8px;"><input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes" /></th>
                                     <th>ID</th>
-                                    <th>Author</th>
-                                    <th>Judul</th>
-                                    <th>Tanggal</th>
-                                    <th>View</th>
+                                    <th>Nama</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                <?php
-                                foreach($listpost as $r){
-                                    $url = base_url().'index.php/post/edit/'.$r->id_berita;
+                                foreach($listkategori as $r){
+                                    $url = base_url().'index.php/kategori/edit/'.$r->id_kategori;
                                 ?>
                                 <tr class="odd gradeX">
-                                   <td><input type="checkbox" name="checkbox[]" class="checkboxes" value="<?php echo $r->id_berita; ?>" /></td>
-                                    <td><?php echo $r->id_berita; ?></td>
-                                    <td><?php echo $r->username; ?></td>
-                                    <td><a href="<?php echo $url ;?>"><?php echo $r->judul; ?></a></td>
-                                    <td><?php echo date('d-m-Y', strtotime($r->tanggal)); ?></td>
-                                    <td><?php echo $r->dibaca; ?></td>
+                                   <td><input type="checkbox" name="checkbox[]" class="checkboxes" value="<?php echo $r->id_kategori; ?>" /></td>
+                                    <td><?php echo $r->id_kategori; ?></td>
+                                    <td><a href="<?php echo $url ;?>"><?php echo $r->nama_kategori; ?></a></td>
+                                    <td><?php echo $r->aktif == 'Y' ? 
+                                        "<span class='label label-success'>Aktif</span> " :
+                                        "<span class='label label-important'>Tidak Aktif</span> "
+                                    ;?></td>
                                 </tr>
                                 <?php 
                                 } ?>

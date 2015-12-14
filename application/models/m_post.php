@@ -52,5 +52,19 @@ class M_post extends CI_Model
         $this->db->where('id_berita', $id);
         $this->db->delete('berita');
     }
+    
+     public function list_category()
+    {
+         $result = array();
+        $query = $this->db->query("select * from kategori order by nama_kategori ASC");
+        if ($query->num_rows() > 0) {
+            $result[0] = "--Pilih Kategori--";
+            foreach($query->result() as $r){
+                $result[$r->id_kategori] = $r->nama_kategori;
+            }
+            return $result;
+        }
+        else return false;
+    }
 }
 ?>

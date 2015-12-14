@@ -51,8 +51,19 @@ $route['post/add'] = 'c_post/add';
 $route['post/save'] = 'c_post/save';
 $route['post/delete'] = 'c_post/delete';
 
+$route['kategori'] = 'c_kategori/index';
+$route['kategori/edit/(:num)'] = 'c_kategori/edit/$1';
+$route['kategori/update'] = 'c_kategori/update';
+$route['kategori/add'] = 'c_kategori/add';
+$route['kategori/save'] = 'c_kategori/save';
+$route['kategori/delete'] = 'c_kategori/delete';
 
-
+$route['user'] = 'c_user/index';
+$route['user/edit/(:num)'] = 'c_user/edit/$1';
+$route['user/update'] = 'c_user/update';
+$route['user/add'] = 'c_user/add';
+$route['user/save'] = 'c_user/save';
+$route['user/delete'] = 'c_user/delete';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

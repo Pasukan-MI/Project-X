@@ -1,12 +1,10 @@
 <?php
-if(empty($formPost)){
-    $formPost->id_berita = '';
-    $formPost->id_kategori = '';
-    $formPost->judul = '';
-    $formPost->isi_berita = '';
-    $formPost->type = 'tambah';
+if(empty($formKategori)){
+    $formKategori->id_kategori = '';
+    $formKategori->nama_kategori = '';
+    $formKategori->type = 'tambah';
 }
-else{ $formPost->type = 'update'; }
+else{ $formKategori->type = 'update'; }
 ?>
      <!-- BEGIN PAGE -->  
       <div id="main-content">
@@ -44,28 +42,16 @@ else{ $formPost->type = 'update'; }
                            Add Post</h4>              
                         </div>
                         <div class="widget-body form">
-                           <form action="<?php echo base_url();?>index.php/post/save" class="form-horizontal" method="post">
-                           <input type="hidden" name="id" value="<?php echo $formPost->id_berita;?>">
+                           <form action="<?php echo base_url();?>index.php/kategori/save" class="form-horizontal" method="post">
+                           <input type="hidden" name="id" value="<?php echo $formKategori->id_kategori;?>">
                            <div class="control-group">
-                              <label class="control-label">Judul</label>
+                              <label class="control-label">Nama Kategori</label>
                               <div class="controls">
-                                 <input type="text" class="span6 " name="judul" value='<?php echo $formPost->judul;?>'/>
+                                 <input type="text" class="span6 " name="nm_kategori" value='<?php echo $formKategori->nama_kategori;?>'/>
                               </div>
                            </div>
-                           <div class="control-group">
-                              <label class="control-label">Kategori</label>
-                              <div class="controls">
-                                 <?php echo form_dropdown('kategori', $listkategori,  $formPost->id_kategori);?>
-                              </div>
-                           </div>
-                           <div class="control-group">
-                                    <label class="control-label">Isi</label>
-                                    <div class="controls">
-                                        <textarea class="span6 ckeditor" name="editor1" rows="8"><?php echo $formPost->isi_berita;?></textarea>
-                                    </div>
-                                </div>
                                 <div class="form-actions">
-                              <input type="submit" class="btn btn-success" name="submit" value="<?php echo $formPost->type;?>">
+                              <input type="submit" class="btn btn-success" name="submit" value="<?php echo $formKategori->type;?>">
                            </div>
                             </form>
                         </div>

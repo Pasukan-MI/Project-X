@@ -32,7 +32,7 @@
                         </div>
                         <div class="widget-body">
                             <div class="row-fluid offset1" style="ba">
-                           <a href="#" class="icon-btn btn span2">
+                           <a href="<?php echo base_url("index.php/post");?>" class="icon-btn btn span2">
                                <i class="icon-book"></i>
                                <div class="bold">Manajemen Post</div>
                            </a>

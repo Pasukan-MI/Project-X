@@ -35,13 +35,15 @@ class C_post extends Admin_Controller {
      public function add(){
         ini_set('error_reporting', E_STRICT); 
        $this->data['konten'] = 'form_post';
+         $this->data['listkategori'] = $this->M_post->list_category();
        $this->data ['formPost'] = "";    
       $this->load->view('dashboard', $this->data); 
     }
     
     public function save(){
-         $this->form_validation->set_rules('judul', 'Judul', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('judul', 'Judul', 'trim|required|xss_clean');
         $this->form_validation->set_rules('editor1', 'Isi', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('kategori', 'Kategori', 'trim|required|xss_clean');
          if($this->form_validation->run() == false){
              redirect('post/add');
          }
@@ -49,18 +51,20 @@ class C_post extends Admin_Controller {
              if($this->input->post('submit') == 'update'){
                  $id = $this->input->post('id');
                  $data = array(
-                   'judul' => $this->input->post('judul') ,
-                   'isi_berita' => $this->input->post('editor1'),
-                   'tanggal' => date('Y-m-d H:i:s') 
+                    'judul' => $this->input->post('judul') ,
+                    'id_kategori' => $this->input->post('kategori') ,
+                    'isi_berita' => $this->input->post('editor1'),
+                    'tanggal' => date('Y-m-d H:i:s') 
                 );
                  $result = $this->M_post->update($data, $id);
              }
              elseif($this->input->post('submit') == 'tambah'){
                  $data = array(
-                  'id_berita' => generateId(),
-                   'judul' => $this->input->post('judul') ,
-                   'isi_berita' => $this->input->post('editor1'),
-                   'tanggal' => date('Y-m-d H:i:s') 
+                    'id_berita' => generateId('berita'),
+                    'id_kategori' => $this->input->post('kategori') ,
+                    'judul' => $this->input->post('judul') ,
+                    'isi_berita' => $this->input->post('editor1'),
+                    'tanggal' => date('Y-m-d H:i:s') 
                 );
                  $result = $this->M_post->save($data);
              }
@@ -74,6 +78,7 @@ class C_post extends Admin_Controller {
     
      public function edit($id){
         $result = $this->M_post->get_by_id($id);
+         $this->data['listkategori'] = $this->M_post->list_category();
         $this->data['konten'] = 'form_post';
         $this->data['formPost'] = $result;
          $this->load->view('dashboard', $this->data);

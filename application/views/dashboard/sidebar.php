@@ -25,7 +25,7 @@
                   </a>
                   <ul class="sub">
                       <li><a href="<?php echo base_url("index.php/post");?>"> Post</a></li>
-                      <li><a href="">Categories</a></li>
+                      <li><a href="<?php echo base_url("index.php/kategori");?>">Categories</a></li>
                   </ul>
               </li>
               <li>
