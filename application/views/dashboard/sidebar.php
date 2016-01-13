@@ -1,51 +1,475 @@
-<!-- BEGIN CONTAINER -->
-   <div id="container" class="row-fluid">
-      <!-- BEGIN SIDEBAR -->
-      <div id="sidebar" class="nav-collapse collapse">
+<div class="sidebar-menu fixed">
 
-         <div class="sidebar-toggler hidden-phone"></div>   
+		<div class="sidebar-menu-inner">
+			
+			<header class="logo-env">
 
-         <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
-         <div class="navbar-inverse">
-            <form class="navbar-search visible-phone">
-               <input type="text" class="search-query" placeholder="Search" />
-            </form>
-         </div>
-         <!-- END RESPONSIVE QUICK SEARCH FORM -->
-         <!-- BEGIN SIDEBAR MENU -->
-          <ul class="sidebar-menu">
-              <li>
-                  <a href="<?php echo base_url("index.php/dashboard");?>" class="">
-                      <span class="icon-box"> <i class="icon-dashboard"></i></span> Dashboard
-                  </a>
-              </li>
-              <li class="has-sub">
-                  <a href="javascript:;" class="">
-                      <span class="icon-box"> <i class="icon-book"></i></span> Posts <span class="arrow"></span>
-                  </a>
-                  <ul class="sub">
-                      <li><a href="<?php echo base_url("index.php/post");?>"> Post</a></li>
-                      <li><a href="">Categories</a></li>
-                  </ul>
-              </li>
-              <li>
-                  <a href="#" class="">
-                      <span class="icon-box"> <i class="icon-group"></i></span> Users
-                  </a>
-              </li>
-              <li>
-                  <a href="#" class="">
-                      <span class="icon-box"> <i class="icon-comment"></i></span> Comments
-                  </a>
-              </li>
-              <li>
-                  <a href="#" class="">
-                      <span class="icon-box"> <i class="icon-reorder"></i></span> Menus
-                  </a>
-              </li>
-              
-              <li><a class="" href="login.html"><span class="icon-box"><i class="icon-cogs"></i></span> Settings</a></li>
-          </ul>
-         <!-- END SIDEBAR MENU -->
-      </div>
-      <!-- END SIDEBAR -->
+				<!-- logo -->
+				<div class="logo">
+					<a href="index.html">
+						<img src="<?php echo base_url();?>assets/images/logo@2x.png" width="120" alt="" />
+					</a>
+				</div>
+
+				<!-- logo collapse icon -->
+				<div class="sidebar-collapse">
+					<a href="#" class="sidebar-collapse-icon"><!-- add class "with-animation" if you want sidebar to have animation during expanding/collapsing transition -->
+						<i class="entypo-menu"></i>
+					</a>
+				</div>
+
+								
+				<!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
+				<div class="sidebar-mobile-menu visible-xs">
+					<a href="#" class="with-animation"><!-- add class "with-animation" to support animation -->
+						<i class="entypo-menu"></i>
+					</a>
+				</div>
+
+			</header>
+			
+									
+			<ul id="main-menu" class="main-menu">
+				<!-- add class "multiple-expanded" to allow multiple submenus to open -->
+				<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+				<li>
+					<a href="#">
+						<i class="fa fa-dashboard"></i>
+						<span class="title">Dashboard</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-th"></i>
+						<span class="title">Manajemen Produk</span>
+					</a>
+					<ul>
+						<li>
+							<a href="<?php echo base_url();?>admin/product">
+								<span class="title">Pencarian Produk</span>
+							</a>
+						</li>
+						<li>
+							<a href="<?php echo base_url();?>admin/product/add">
+								<span class="title">Tambah Produk</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="title">Kategori Produk</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-shopping-cart"></i>
+						<span class="title">Manajemen Transaksi</span>
+					</a>
+					<ul>
+						<li>
+							<a href="ui-panels.html">
+								<span class="title">Panels</span>
+							</a>
+						</li>
+						<li>
+							<a href="ui-tiles.html">
+								<span class="title">Tiles</span>
+							</a>
+						</li>
+                    </ul>
+				</li>
+				<li>
+					<a href="#">
+						 <i class="fa fa-file-text"></i>
+						<span class="title"> Manajemen Pelaporan</span>
+						<span class="badge badge-secondary">8</span>
+					</a>
+					<ul>
+						<li>
+							<a href="ui-panels.html">
+								<span class="title">Panels</span>
+							</a>
+						</li>
+						<li>
+							<a href="ui-tiles.html">
+								<span class="title">Tiles</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="mailbox.html">
+						<i class="fa fa-gear"></i>
+						<span class="title">Pengaturan</span>
+					</a>
+				</li>
+				
+			</ul>
+			
+		</div>
+
+	</div>
+	<div class="main-content">
+				<div class="row">
+		
+			<!-- Profile Info and Notifications -->
+			<div class="col-md-6 col-sm-8 clearfix">
+		
+				<ul class="user-info pull-left pull-none-xsm">
+		
+					
+				<ul class="user-info pull-left pull-right-xs pull-none-xsm">
+		
+					<!-- Raw Notifications -->
+					<li class="notifications dropdown">
+		
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+							<i class="entypo-attention"></i>
+							<span class="badge badge-info">6</span>
+						</a>
+		
+						<ul class="dropdown-menu">
+							<li class="top">
+								<p class="small">
+									<a href="#" class="pull-right">Mark all Read</a>
+									You have <strong>3</strong> new notifications.
+								</p>
+							</li>
+							
+							<li>
+								<ul class="dropdown-menu-list scroller">
+									<li class="unread notification-success">
+										<a href="#">
+											<i class="entypo-user-add pull-right"></i>
+											
+											<span class="line">
+												<strong>New user registered</strong>
+											</span>
+											
+											<span class="line small">
+												30 seconds ago
+											</span>
+										</a>
+									</li>
+									
+									<li class="unread notification-secondary">
+										<a href="#">
+											<i class="entypo-heart pull-right"></i>
+											
+											<span class="line">
+												<strong>Someone special liked this</strong>
+											</span>
+											
+											<span class="line small">
+												2 minutes ago
+											</span>
+										</a>
+									</li>
+									
+									<li class="notification-primary">
+										<a href="#">
+											<i class="entypo-user pull-right"></i>
+											
+											<span class="line">
+												<strong>Privacy settings have been changed</strong>
+											</span>
+											
+											<span class="line small">
+												3 hours ago
+											</span>
+										</a>
+									</li>
+									
+									<li class="notification-danger">
+										<a href="#">
+											<i class="entypo-cancel-circled pull-right"></i>
+											
+											<span class="line">
+												John cancelled the event
+											</span>
+											
+											<span class="line small">
+												9 hours ago
+											</span>
+										</a>
+									</li>
+									
+									<li class="notification-info">
+										<a href="#">
+											<i class="entypo-info pull-right"></i>
+											
+											<span class="line">
+												The server is status is stable
+											</span>
+											
+											<span class="line small">
+												yesterday at 10:30am
+											</span>
+										</a>
+									</li>
+									
+									<li class="notification-warning">
+										<a href="#">
+											<i class="entypo-rss pull-right"></i>
+											
+											<span class="line">
+												New comments waiting approval
+											</span>
+											
+											<span class="line small">
+												last week
+											</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							
+							<li class="external">
+								<a href="#">View all notifications</a>
+							</li>
+						</ul>
+		
+					</li>
+		
+					<!-- Message Notifications -->
+					<li class="notifications dropdown">
+		
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+							<i class="entypo-mail"></i>
+							<span class="badge badge-secondary">10</span>
+						</a>
+		
+						<ul class="dropdown-menu">
+							<li>
+								<form class="top-dropdown-search">
+									
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="Search anything..." name="s" />
+									</div>
+									
+								</form>
+								
+								<ul class="dropdown-menu-list scroller">
+									<li class="active">
+										<a href="#">
+											<span class="image pull-right">
+												<img src="assets/images/thumb-1.png" alt="" class="img-circle" />
+											</span>
+											
+											<span class="line">
+												<strong>Luc Chartier</strong>
+												- yesterday
+											</span>
+											
+											<span class="line desc small">
+												This ain’t our first item, it is the best of the rest.
+											</span>
+										</a>
+									</li>
+									
+									<li class="active">
+										<a href="#">
+											<span class="image pull-right">
+												<img src="assets/images/thumb-1.png" alt="" class="img-circle" />
+											</span>
+											
+											<span class="line">
+												<strong>Salma Nyberg</strong>
+												- 2 days ago
+											</span>
+											
+											<span class="line desc small">
+												Oh he decisively impression attachment friendship so if everything. 
+											</span>
+										</a>
+									</li>
+									
+									<li>
+										<a href="#">
+											<span class="image pull-right">
+												<img src="assets/images/thumb-1.png" alt="" class="img-circle" />
+											</span>
+											
+											<span class="line">
+												Hayden Cartwright
+												- a week ago
+											</span>
+											
+											<span class="line desc small">
+												Whose her enjoy chief new young. Felicity if ye required likewise so doubtful.
+											</span>
+										</a>
+									</li>
+									
+									<li>
+										<a href="#">
+											<span class="image pull-right">
+												<img src="assets/images/thumb-1.png" alt="" class="img-circle" />
+											</span>
+											
+											<span class="line">
+												Sandra Eberhardt
+												- 16 days ago
+											</span>
+											
+											<span class="line desc small">
+												On so attention necessary at by provision otherwise existence direction.
+											</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							
+							<li class="external">
+								<a href="mailbox.html">All Messages</a>
+							</li>
+						</ul>
+		
+					</li>
+		
+					<!-- Task Notifications -->
+					<li class="notifications dropdown">
+		
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+							<i class="entypo-list"></i>
+							<span class="badge badge-warning">1</span>
+						</a>
+		
+						<ul class="dropdown-menu">
+							<li class="top">
+								<p>You have 6 pending tasks</p>
+							</li>
+							
+							<li>
+								<ul class="dropdown-menu-list scroller">
+									<li>
+										<a href="#">
+											<span class="task">
+												<span class="desc">Procurement</span>
+												<span class="percent">27%</span>
+											</span>
+										
+											<span class="progress">
+												<span style="width: 27%;" class="progress-bar progress-bar-success">
+													<span class="sr-only">27% Complete</span>
+												</span>
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span class="task">
+												<span class="desc">App Development</span>
+												<span class="percent">83%</span>
+											</span>
+											
+											<span class="progress progress-striped">
+												<span style="width: 83%;" class="progress-bar progress-bar-danger">
+													<span class="sr-only">83% Complete</span>
+												</span>
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span class="task">
+												<span class="desc">HTML Slicing</span>
+												<span class="percent">91%</span>
+											</span>
+											
+											<span class="progress">
+												<span style="width: 91%;" class="progress-bar progress-bar-success">
+													<span class="sr-only">91% Complete</span>
+												</span>
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span class="task">
+												<span class="desc">Database Repair</span>
+												<span class="percent">12%</span>
+											</span>
+											
+											<span class="progress progress-striped">
+												<span style="width: 12%;" class="progress-bar progress-bar-warning">
+													<span class="sr-only">12% Complete</span>
+												</span>
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span class="task">
+												<span class="desc">Backup Create Progress</span>
+												<span class="percent">54%</span>
+											</span>
+											
+											<span class="progress progress-striped">
+												<span style="width: 54%;" class="progress-bar progress-bar-info">
+													<span class="sr-only">54% Complete</span>
+												</span>
+											</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span class="task">
+												<span class="desc">Upgrade Progress</span>
+												<span class="percent">17%</span>
+											</span>
+											
+											<span class="progress progress-striped">
+												<span style="width: 17%;" class="progress-bar progress-bar-important">
+													<span class="sr-only">17% Complete</span>
+												</span>
+											</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							
+							<li class="external">
+								<a href="#">See all tasks</a>
+							</li>
+						</ul>
+		
+					</li>
+		
+				</ul>
+		
+			</div>
+		
+		
+			<!-- Raw Links -->
+			<div class="col-md-6 col-sm-4 clearfix hidden-xs">
+		
+				<ul class="list-inline links-list pull-right">
+		
+					<li class="sep"></li>
+		
+					
+					<li>
+						<a href="#" data-toggle="chat" data-collapse-sidebar="1">
+							<i class="entypo-chat"></i>
+							Chat
+		
+							<span class="badge badge-success chat-notifications-badge is-hidden">0</span>
+						</a>
+					</li>
+		
+					<li class="sep"></li>
+		
+					<li>
+						<a href="<?php echo base_url()?>admin_login/logout">
+							Log Out <i class="entypo-logout right"></i>
+						</a>
+					</li>
+				</ul>
+		
+			</div>
+		
+		</div>
+		
+		<hr />

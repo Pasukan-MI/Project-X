@@ -19,11 +19,11 @@ Website: http://thevectorlab.net/
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <meta content="" name="description" />
   <meta content="" name="author" />
-  <link href="<?php echo base_url();?>assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="<?php echo base_url();?>assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" />
-  <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet" />
-  <link href="<?php echo base_url(); ?>assets/css/style_responsive.css" rel="stylesheet" />
-  <link href="<?php echo base_url(); ?>assets/css/style_default.css" rel="stylesheet" id="style_color" />
+  <link href="<?php echo base_url();?>login/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="<?php echo base_url();?>login/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="<?php echo base_url(); ?>login/css/style.css" rel="stylesheet" />
+  <link href="<?php echo base_url(); ?>login/css/style_responsive.css" rel="stylesheet" />
+  <link href="<?php echo base_url(); ?>login/css/style_default.css" rel="stylesheet" id="style_color" />
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -31,7 +31,7 @@ Website: http://thevectorlab.net/
   <div class="login-header">
       <!-- BEGIN LOGO -->
       <div id="logo" class="center">
-          <img src="<?php echo base_url(); ?>assets/img/logo.png" alt="logo" class="center" />
+          <img src="<?php echo base_url(); ?>login/img/logo.png" alt="logo" class="center" />
       </div>
       <!-- END LOGO -->
   </div>
@@ -39,7 +39,7 @@ Website: http://thevectorlab.net/
   <!-- BEGIN LOGIN -->
   <div id="login">
     <!-- BEGIN LOGIN FORM -->
-    <form id="loginform" class="form-vertical no-padding no-margin" action="<?php echo base_url('index.php/c_login/proses_login');?>" method="post">
+    <form id="loginform" class="form-vertical no-padding no-margin" action="<?php echo base_url('index.php/admin_login/proses_login');?>" method="post">
       <div class="lock">
           <i class="icon-lock"></i>
       </div>
@@ -97,10 +97,10 @@ Website: http://thevectorlab.net/
   </div>
   <!-- END COPYRIGHT -->
   <!-- BEGIN JAVASCRIPTS -->
-  <script src="<?php echo base_url(); ?>assets/js/jquery-1.8.3.min.js"></script>
-  <script src="<?php echo base_url();?>assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/jquery.blockui.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/scripts.js"></script>
+  <script src="<?php echo base_url(); ?>login/js/jquery-1.8.3.min.js"></script>
+  <script src="<?php echo base_url();?>login/plugins/bootstrap/js/bootstrap.min.js"></script>
+  <script src="<?php echo base_url(); ?>login/js/jquery.blockui.js"></script>
+  <script src="<?php echo base_url(); ?>login/js/scripts.js"></script>
   <script>
     jQuery(document).ready(function() {     
       App.initLogin();

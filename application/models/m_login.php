@@ -12,15 +12,15 @@ class M_login extends CI_Model
     {
         
         $query = $this->db->query("SELECT *
-                                            from users
-                                            WHERE username = '$username' 
+                                            from user
+                                            WHERE nama = '$username' 
                                             and password = '$password'");
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $rows) {
                 $newdata = array(
-                    'username' => $rows->username,
+                    'username' => $rows->nama,
                     'email' => $rows->email,
-                    'level' => $rows->level,
+                    //'level' => $rows->level,
                     'Logged' => TRUE
                 );
             }

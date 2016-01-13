@@ -38,18 +38,23 @@
 |
 */
 
-$route['default_controller'] = "c_login";
+$route['default_controller'] = "admin_login";
 $route['404_override'] = '';
 
-$route['login'] = 'c_login/index';
-$route['dashboard'] = 'c_dashboard/index';
+if (config_item('installed') == 'no')
+{
+ $route["default_controller"] = "install";
+}
 
-$route['post'] = 'c_post/index';
-$route['post/edit/(:num)'] = 'c_post/edit/$1';
-$route['post/update'] = 'c_post/update';
-$route['post/add'] = 'c_post/add';
-$route['post/save'] = 'c_post/save';
-$route['post/delete'] = 'c_post/delete';
+$route['admin'] = 'admin_login/index';
+$route['admin/dashboard'] = 'admin_dashboard/index';
+
+$route['admin/product'] = 'admin_product/index';
+$route['admin/post/edit/(:num)'] = 'admin_post/edit/$1';
+$route['admin/post/update'] = 'admin_post/update';
+$route['admin/product/add'] = 'admin_product/add';
+$route['admin/post/save'] = 'admin_post/save';
+$route['admin/post/delete'] = 'admin_post/delete';
 
 
 

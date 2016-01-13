@@ -1,12 +1,5 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-function __autoload($classname) {
-    if (strpos($classname, 'CI_') !== 0) {
-        $file = APPPATH .'libraries/'. $classname . '.php';
-        if (file_exists($file) && is_file($file)){
-            @include_once($file);
-        }
-    }
-}
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -35,7 +28,7 @@ $config['base_url'] = '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -53,7 +46,7 @@ $config['index_page'] = 'index.php';
 | 'ORIG_PATH_INFO'	Uses the ORIG_PATH_INFO
 |
 */
-$config['uri_protocol']	= 'AUTO';
+$config['uri_protocol']	= 'REQUEST_URI';
 
 /*
 |--------------------------------------------------------------------------
@@ -233,7 +226,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = 'super_confidential';
+$config['encryption_key'] = 'app_30VkDyDU';
 
 /*
 |--------------------------------------------------------------------------
@@ -369,3 +362,4 @@ $config['proxy_ips'] = '';
 
 /* End of file config.php */
 /* Location: ./application/config/config.php */
+$config['installed'] = 'yes';

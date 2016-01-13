@@ -1,39 +1,40 @@
-<!-- BEGIN FOOTER -->
-   <div id="footer">
-       2013 &copy; Admin Lab Dashboard.
-      <div class="span pull-right">
-         <span class="go-top"><i class="icon-arrow-up"></i></span>
-      </div>
-   </div>
-   <!-- END FOOTER -->
+<link rel="stylesheet" href="<?php echo base_url();?>assets/css/font-icons/font-awesome/css/font-awesome.css">
+<link rel="stylesheet" href="<?php echo base_url();?>assets/js/selectboxit/jquery.selectBoxIt.css">    
 
-   <!-- BEGIN JAVASCRIPTS -->    
-   <!-- Load javascripts at bottom, this will reduce page load time -->
-   <script src="<?php echo base_url();?>assets/js/jquery-1.8.3.min.js"></script>
-   <script src="<?php echo base_url();?>assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-   <script src="<?php echo base_url();?>assets/js/jquery.blockui.js"></script>
-   <!-- ie8 fixes -->
-   <!--[if lt IE 9]>
-   <script src="<?php echo base_url();?>assets/js/excanvas.js"></script>
-   <script src="<?php echo base_url();?>assets/js/respond.js"></script>
-   <![endif]-->
-   <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/chosen-bootstrap/chosen/chosen.jquery.min.js"></script>
-   <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/uniform/jquery.uniform.min.js"></script>
-   <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/data-tables/jquery.dataTables.js"></script>
-   <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/data-tables/DT_bootstrap.js"></script>
-   <script type="text/javascript" src="<?php echo base_url();?>assets/plugins/ckeditor/ckeditor.js"></script>
-   <script src="<?php echo base_url();?>assets/js/scripts.js"></script>
-   <script>var BASE_URL = '<?php echo base_url();?>';</script>
-   <script src="<?php echo base_url();?>assets/js/custom.js"></script>
-   <!---<script>$('#myModal').modal('show')</script>--->
-   <script>
-      jQuery(document).ready(function() {       
-         // initiate layout and plugins
-         App.init();
-      });
-   </script>
+	<!-- Bottom scripts (common) -->
+	<script src="<?php echo base_url();?>assets/js/gsap/main-gsap.js"></script>
+	<script src="<?php echo base_url();?>assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
+	<script src="<?php echo base_url();?>assets/js/bootstrap.js"></script>
+	<script src="<?php echo base_url();?>assets/js/joinable.js"></script>
+	<script src="<?php echo base_url();?>assets/js/resizeable.js"></script>
+	<script src="<?php echo base_url();?>assets/js/neon-api.js"></script>
+	<script src="<?php echo base_url();?>assets/js/jquery.dataTables.min.js"></script>
+    <script src="<?php echo base_url();?>assets/js/datatables/TableTools.min.js"></script>
 
-   <!-- END JAVASCRIPTS --> 
+    <script src="<?php echo base_url();?>assets/js/dataTables.bootstrap.js"></script>
+	<script src="<?php echo base_url();?>assets/js/datatables/jquery.dataTables.columnFilter.js"></script>
+	<script src="<?php echo base_url();?>assets/js/datatables/lodash.min.js"></script>
+	<script src="<?php echo base_url();?>assets/js/datatables/responsive/js/datatables.responsive.js"></script>
+	<script src="<?php echo base_url();?>assets/js/select2/select2.min.js"></script>
+	<script src="<?php echo base_url();?>assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
+	<script src="<?php echo base_url();?>assets/js/neon-chat.js"></script>
+	<script src="<?php echo base_url();?>assets/js/ckeditor/ckeditor.js"></script>
+	<script src="<?php echo base_url();?>assets/js/fileinput.js"></script>
+
+	<!-- JavaScripts initializations and stuff -->
+	<script src="<?php echo base_url();?>assets/js/neon-custom.js"></script>
+    <script>
+        // CKeditor WYSIWYG
+		if($.isFunction($.fn.ckeditor))
+		{
+			$(".ckeditor").ckeditor({
+				contentsLangDirection: rtl() ? 'rtl' : 'ltr'
+			});
+		}
+    </script>
+
+	<!-- Demo Settings -->
+	<script src="<?php echo base_url();?>assets/js/neon-demo.js"></script>
+
 </body>
-<!-- END BODY -->
 </html>
